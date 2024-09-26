@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Школьный журнал</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+        .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #8e9096;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    transition: .5s;
+}
+.btn:hover {
+    background: transparent;
+    color:#000000
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Maktab Jurnali</h2>
+
+    <label for="teacher-name">Ustoz Ism,Sharifi: </label>
+Nafisa Murodovna  <br><br>
+
+    <label for="subject-name">Dars: </label>
+
+    
+
+
+  Inglis tili  <br>
+
+    <table>
+       <button> <a href="darslar.html" class="btn">Boshqa Darslar baholari</a></button>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Имя ученика</th>
+                <th>Оценка 1</th>
+                <th>Оценка 2</th>
+                <th>Оценка 3</th>
+                <th>Оценка 4</th>
+                <th>Оценка 5</th> 
+                <th>Оценка 6</th> 
+                <th>Оценка 7</th>
+                 <th>Оценка 8</th>
+                  <th>Оценка 9</th>
+                   <th>Оценка 10</th>
+                    <th>Оценка 11</th>
+                     <th>Оценка 12</th>
+                      <th>Оценка 13</th> 
+                      <th>Оценка 14</th> 
+                      <th>Оценка 15</th>
+                       <th>Оценка 16</th>
+                        <th>Оценка 17</th>
+                         <th>Оценка 18</th>
+                         <th>Оценка 19</th>
+                         <th>Оценка 20</th>
+                         <th>Оценка 21</th>
+                         <th>Оценка 22</th>
+                         <th>Оценка 23</th>
+                         <th>Оценка 24</th>
+                         <th>Оценка 25</th>
+                         <th>Оценка 26</th>
+                         <th>Оценка 27</th>
+                         <th>Оценка 28</th>                         
+                <th>Итоговая оценка</th>
+            </tr>
+        </thead>
+        <tbody id="student-table">
+            <!-- Здесь будут добавлены строки с учениками -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Функция для добавления строк учеников
+    function populateTable() {
+        const tableBody = document.getElementById('student-table');
+        for (let i = 1; i <= 30; i++) {
+            const row = document.createElement('tr');
+
+            // Колонка с номером
+            const numberCell = document.createElement('td');
+            numberCell.textContent = i;
+            row.appendChild(numberCell);
+
+            // Колонка с именем ученика
+            const nameCell = document.createElement('td');
+            const nameInput = document.createElement('input');
+            nameInput.type = 'button';
+            nameInput.placeholder = 'Имя ученика';
+            nameCell.appendChild(nameInput);
+            row.appendChild(nameCell);
+
+            // Колонки с оценками
+            for (let j = 1; j <= 28; j++) {
+                const gradeCell = document.createElement('td');
+                const gradeInput = document.createElement('input');
+                gradeInput.type = 'button';
+                gradeInput.placeholder = 'Оценка ' + j;
+                gradeCell.appendChild(gradeInput);
+                row.appendChild(gradeCell);
+            }
+
+            // Итоговая оценка
+            const finalGradeCell = document.createElement('td');
+            finalGradeCell.textContent = '-'; // Placeholder для итоговой оценки
+            row.appendChild(finalGradeCell);
+
+            tableBody.appendChild(row);
+        }
+    }
+
+    // Вызов функции для добавления учеников в таблицу
+    populateTable();
+</script>
+
+</body>
+</html>
