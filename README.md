@@ -1,0 +1,2 @@
+# maktabJ.uz
+Maktab Jurnali
